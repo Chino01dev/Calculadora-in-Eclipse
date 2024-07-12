@@ -1,0 +1,193 @@
+package gui;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import java.awt.SystemColor;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
+
+public class calculadora extends JFrame implements MouseListener {
+
+	private JPanel contentPane;
+	private JPanel panel;
+	private JPanel panel_1;
+	private JLabel lbloperacion;
+	private JLabel lblresulrado;
+	private JButton btnNewButton;
+	private JLabel lblX;
+	private JButton button;
+	private JButton button_1;
+	private JButton button_2;
+	private JButton button_3;
+	private JButton button_4;
+	private JButton button_5;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					calculadora frame = new calculadora();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public calculadora() {
+		setUndecorated(true);
+		setBackground(new Color(240, 240, 240));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 350, 540);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		{
+			panel = new JPanel();
+			panel.setBackground(SystemColor.info);
+			panel.setBounds(0, 0, 351, 159);
+			contentPane.add(panel);
+			panel.setLayout(null);
+			{
+				lbloperacion = new JLabel("10+20 x 3");
+				lbloperacion.setHorizontalAlignment(SwingConstants.RIGHT);
+				lbloperacion.setFont(new Font("Consolas", Font.BOLD, 18));
+				lbloperacion.setBounds(0, 25, 339, 32);
+				panel.add(lbloperacion);
+			}
+			{
+				lblresulrado = new JLabel("1234");
+				lblresulrado.setForeground(new Color(0, 0, 0));
+				lblresulrado.setFont(new Font("Consolas", Font.BOLD, 36));
+				lblresulrado.setHorizontalAlignment(SwingConstants.RIGHT);
+				lblresulrado.setBounds(0, 70, 339, 76);
+				panel.add(lblresulrado);
+			}
+			{
+				lblX = new JLabel("X");
+				lblX.addMouseListener(this);
+				lblX.setFont(new Font("Trebuchet MS", Font.BOLD, 15));
+				lblX.setHorizontalAlignment(SwingConstants.CENTER);
+				lblX.setHorizontalTextPosition(SwingConstants.CENTER);
+				lblX.setBounds(319, 0, 32, 16);
+				panel.add(lblX);
+			}
+		}
+		{
+			panel_1 = new JPanel();
+			panel_1.setBackground(SystemColor.text);
+			panel_1.setBounds(0, 159, 351, 310);
+			contentPane.add(panel_1);
+			panel_1.setLayout(null);
+			{
+				btnNewButton = new JButton("C");
+				btnNewButton.setBorder(null);
+				btnNewButton.setFocusPainted(false);
+				btnNewButton.setHorizontalTextPosition(SwingConstants.CENTER);
+				btnNewButton.setFont(new Font("Consolas", Font.PLAIN, 24));
+				btnNewButton.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				btnNewButton.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				btnNewButton.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				btnNewButton.setBounds(12, 32, 50, 50);
+				panel_1.add(btnNewButton);
+			}
+			{
+				button = new JButton("C");
+				button.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button.setHorizontalTextPosition(SwingConstants.CENTER);
+				button.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button.setFocusPainted(false);
+				button.setBorder(null);
+				button.setBounds(100, 32, 50, 50);
+				panel_1.add(button);
+			}
+			{
+				button_1 = new JButton("C");
+				button_1.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_1.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_1.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_1.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_1.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_1.setFocusPainted(false);
+				button_1.setBorder(null);
+				button_1.setBounds(185, 32, 50, 50);
+				panel_1.add(button_1);
+			}
+			{
+				button_2 = new JButton("C");
+				button_2.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_2.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_2.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_2.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_2.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_2.setFocusPainted(false);
+				button_2.setBorder(null);
+				button_2.setBounds(266, 32, 50, 50);
+				panel_1.add(button_2);
+			}
+			{
+				button_3 = new JButton("C");
+				button_3.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_3.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_3.setFocusPainted(false);
+				button_3.setBorder(null);
+				button_3.setBounds(266, 106, 50, 50);
+				panel_1.add(button_3);
+			}
+			{
+				button_4 = new JButton("C");
+				button_4.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_4.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_4.setFocusPainted(false);
+				button_4.setBorder(null);
+				button_4.setBounds(266, 181, 50, 50);
+				panel_1.add(button_4);
+			}
+			{
+				button_5 = new JButton("C");
+				button_5.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_5.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_5.setFocusPainted(false);
+				button_5.setBorder(null);
+				button_5.setBounds(266, 251, 50, 50);
+				panel_1.add(button_5);
+			}
+		}
+	}
+	public void mouseClicked(MouseEvent arg0) {
+		if (arg0.getSource() == lblX) {
+			do_lblX_mouseClicked(arg0);
+		}
+	}
+	public void mouseEntered(MouseEvent arg0) {
+	}
+	public void mouseExited(MouseEvent arg0) {
+	}
+	public void mousePressed(MouseEvent arg0) {
+	}
+	public void mouseReleased(MouseEvent arg0) {
+	}
+	protected void do_lblX_mouseClicked(MouseEvent arg0) {
+		System.exit(0);
+	}
+}

@@ -1,0 +1,359 @@
+package gui;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import java.awt.SystemColor;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
+
+public class calculadora extends JFrame implements MouseListener {
+
+	private JPanel contentPane;
+	private JPanel panel;
+	private JPanel panel_1;
+	private JLabel lbloperacion;
+	private JLabel lblresulrado;
+	private JButton btnNewButton;
+	private JLabel lblX;
+	private JButton button;
+	private JButton button_1;
+	private JButton button_2;
+	private JButton btnX;
+	private JButton button_4;
+	private JButton button_5;
+	private JButton button_6;
+	private JButton button_7;
+	private JButton button_8;
+	private JButton button_9;
+	private JButton button_10;
+	private JButton button_11;
+	private JButton button_12;
+	private JButton button_13;
+	private JButton button_14;
+	private JButton button_15;
+	private JButton button_16;
+	private JButton button_17;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					calculadora frame = new calculadora();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public calculadora() {
+		setUndecorated(true);
+		setBackground(new Color(240, 240, 240));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 350, 540);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		{
+			panel = new JPanel();
+			panel.setBackground(SystemColor.info);
+			panel.setBounds(0, 0, 351, 159);
+			contentPane.add(panel);
+			panel.setLayout(null);
+			{
+				lbloperacion = new JLabel("10+20 x 3");
+				lbloperacion.setHorizontalAlignment(SwingConstants.RIGHT);
+				lbloperacion.setFont(new Font("Consolas", Font.BOLD, 18));
+				lbloperacion.setBounds(0, 25, 339, 32);
+				panel.add(lbloperacion);
+			}
+			{
+				lblresulrado = new JLabel("1234");
+				lblresulrado.setForeground(new Color(0, 0, 0));
+				lblresulrado.setFont(new Font("Consolas", Font.BOLD, 50));
+				lblresulrado.setHorizontalAlignment(SwingConstants.RIGHT);
+				lblresulrado.setBounds(0, 70, 339, 76);
+				panel.add(lblresulrado);
+			}
+			{
+				lblX = new JLabel("X");
+				lblX.addMouseListener(this);
+				lblX.setFont(new Font("Trebuchet MS", Font.BOLD, 15));
+				lblX.setHorizontalAlignment(SwingConstants.CENTER);
+				lblX.setHorizontalTextPosition(SwingConstants.CENTER);
+				lblX.setBounds(319, 0, 32, 16);
+				panel.add(lblX);
+			}
+		}
+		{
+			panel_1 = new JPanel();
+			panel_1.setBackground(SystemColor.text);
+			panel_1.setBounds(0, 159, 351, 381);
+			contentPane.add(panel_1);
+			panel_1.setLayout(null);
+			{
+				btnNewButton = new JButton("C");
+				btnNewButton.setBorder(null);
+				btnNewButton.setFocusPainted(false);
+				btnNewButton.setHorizontalTextPosition(SwingConstants.CENTER);
+				btnNewButton.setFont(new Font("Consolas", Font.PLAIN, 24));
+				btnNewButton.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				btnNewButton.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				btnNewButton.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				btnNewButton.setBounds(10, 30, 50, 50);
+				panel_1.add(btnNewButton);
+			}
+			{
+				button = new JButton("^");
+				button.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button.setHorizontalTextPosition(SwingConstants.CENTER);
+				button.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button.setFocusPainted(false);
+				button.setBorder(null);
+				button.setBounds(100, 30, 50, 50);
+				panel_1.add(button);
+			}
+			{
+				button_1 = new JButton("%");
+				button_1.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_1.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_1.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_1.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_1.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_1.setFocusPainted(false);
+				button_1.setBorder(null);
+				button_1.setBounds(190, 30, 50, 50);
+				panel_1.add(button_1);
+			}
+			{
+				button_2 = new JButton("/");
+				button_2.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_2.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_2.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_2.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_2.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_2.setFocusPainted(false);
+				button_2.setBorder(null);
+				button_2.setBounds(280, 30, 50, 50);
+				panel_1.add(button_2);
+			}
+			{
+				btnX = new JButton("X");
+				btnX.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				btnX.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				btnX.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				btnX.setHorizontalTextPosition(SwingConstants.CENTER);
+				btnX.setFont(new Font("Consolas", Font.PLAIN, 24));
+				btnX.setFocusPainted(false);
+				btnX.setBorder(null);
+				btnX.setBounds(280, 100, 50, 50);
+				panel_1.add(btnX);
+			}
+			{
+				button_4 = new JButton("-");
+				button_4.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_4.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_4.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_4.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_4.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_4.setFocusPainted(false);
+				button_4.setBorder(null);
+				button_4.setBounds(280, 170, 50, 50);
+				panel_1.add(button_4);
+			}
+			{
+				button_5 = new JButton("+");
+				button_5.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_5.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_5.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_5.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_5.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_5.setFocusPainted(false);
+				button_5.setBorder(null);
+				button_5.setBounds(280, 240, 50, 50);
+				panel_1.add(button_5);
+			}
+			{
+				button_6 = new JButton("=");
+				button_6.setForeground(Color.WHITE);
+				button_6.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn3.png"));
+				button_6.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_6.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_6.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_6.setFont(new Font("Consolas", Font.PLAIN, 30));
+				button_6.setFocusPainted(false);
+				button_6.setBorder(null);
+				button_6.setBounds(280, 310, 50, 50);
+				panel_1.add(button_6);
+			}
+			{
+				button_7 = new JButton("7");
+				button_7.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_7.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_7.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn2.png"));
+				button_7.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_7.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_7.setFocusPainted(false);
+				button_7.setBorder(null);
+				button_7.setBounds(10, 100, 50, 50);
+				panel_1.add(button_7);
+			}
+			{
+				button_8 = new JButton("8");
+				button_8.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_8.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_8.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn2.png"));
+				button_8.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_8.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_8.setFocusPainted(false);
+				button_8.setBorder(null);
+				button_8.setBounds(100, 100, 50, 50);
+				panel_1.add(button_8);
+			}
+			{
+				button_9 = new JButton("9");
+				button_9.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn2.png"));
+				button_9.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_9.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_9.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_9.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_9.setFocusPainted(false);
+				button_9.setBorder(null);
+				button_9.setBounds(190, 100, 50, 50);
+				panel_1.add(button_9);
+			}
+			{
+				button_10 = new JButton("5");
+				button_10.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_10.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_10.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn2.png"));
+				button_10.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_10.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_10.setFocusPainted(false);
+				button_10.setBorder(null);
+				button_10.setBounds(100, 170, 50, 50);
+				panel_1.add(button_10);
+			}
+			{
+				button_11 = new JButton("4");
+				button_11.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn2.png"));
+				button_11.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_11.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_11.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_11.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_11.setFocusPainted(false);
+				button_11.setBorder(null);
+				button_11.setBounds(10, 170, 50, 50);
+				panel_1.add(button_11);
+			}
+			{
+				button_12 = new JButton("6");
+				button_12.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_12.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn2.png"));
+				button_12.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_12.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_12.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_12.setFocusPainted(false);
+				button_12.setBorder(null);
+				button_12.setBounds(190, 170, 50, 50);
+				panel_1.add(button_12);
+			}
+			{
+				button_13 = new JButton("2");
+				button_13.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_13.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_13.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn2.png"));
+				button_13.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_13.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_13.setFocusPainted(false);
+				button_13.setBorder(null);
+				button_13.setBounds(100, 240, 50, 50);
+				panel_1.add(button_13);
+			}
+			{
+				button_14 = new JButton("1");
+				button_14.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn2.png"));
+				button_14.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_14.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_14.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_14.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_14.setFocusPainted(false);
+				button_14.setBorder(null);
+				button_14.setBounds(10, 240, 50, 50);
+				panel_1.add(button_14);
+			}
+			{
+				button_15 = new JButton("3");
+				button_15.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn2.png"));
+				button_15.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_15.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_15.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_15.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_15.setFocusPainted(false);
+				button_15.setBorder(null);
+				button_15.setBounds(190, 240, 50, 50);
+				panel_1.add(button_15);
+			}
+			{
+				button_16 = new JButton(".");
+				button_16.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_16.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_16.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_16.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_16.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_16.setFocusPainted(false);
+				button_16.setBorder(null);
+				button_16.setBounds(100, 310, 50, 50);
+				panel_1.add(button_16);
+			}
+			{
+				button_17 = new JButton("0");
+				button_17.setRolloverIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1presionado.png"));
+				button_17.setPressedIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn1.png"));
+				button_17.setIcon(new ImageIcon("C:\\Users\\jduwn\\OneDrive\\Escritorio\\UPN\\Proyectos\\Calculadora-JAVA\\Calculadora\\src\\images\\btn2.png"));
+				button_17.setHorizontalTextPosition(SwingConstants.CENTER);
+				button_17.setFont(new Font("Consolas", Font.PLAIN, 24));
+				button_17.setFocusPainted(false);
+				button_17.setBorder(null);
+				button_17.setBounds(10, 310, 50, 50);
+				panel_1.add(button_17);
+			}
+		}
+	}
+	public void mouseClicked(MouseEvent arg0) {
+		if (arg0.getSource() == lblX) {
+			do_lblX_mouseClicked(arg0);
+		}
+	}
+	public void mouseEntered(MouseEvent arg0) {
+	}
+	public void mouseExited(MouseEvent arg0) {
+	}
+	public void mousePressed(MouseEvent arg0) {
+	}
+	public void mouseReleased(MouseEvent arg0) {
+	}
+	protected void do_lblX_mouseClicked(MouseEvent arg0) {
+		System.exit(0);
+	}
+}
